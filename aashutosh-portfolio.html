@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashutosh Saini | AI Product Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #FAFAFA;
+            --bg-secondary: #FFFFFF;
+            --bg-dark: #0F172A;
+            --bg-card: #FFFFFF;
+            --accent-primary: #2563EB;
+            --accent-secondary: #3B82F6;
+            --accent-light: #EFF6FF;
+            --accent-green: #10B981;
+            --accent-green-light: #ECFDF5;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #94A3B8;
+            --border-color: #E2E8F0;
+            --gradient-premium: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --gradient-blue: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 0 48px;
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover { color: white; }
+
+        .nav-cta {
+            padding: 10px 24px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            color: var(--bg-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: white;
+        }
+
+        /* Hero - Dark Theme */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 140px 24px 100px;
+            background: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #34D399;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge .dot {
+            width: 8px; height: 8px;
+            background: #34D399;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            max-width: 800px;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 560px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            color: var(--bg-dark);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 48px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Project Sections */
+        .project-section {
+            background: var(--bg-secondary);
+            padding: 100px 48px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-section:nth-child(odd) {
+            background: var(--bg-primary);
+        }
+
+        .project-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .project-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-primary);
+            padding: 6px 14px;
+            background: var(--accent-light);
+            border-radius: 100px;
+        }
+
+        .project-category {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .project-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 700px;
+        }
+
+        /* Smaller Project Images with Caption */
+        .project-image {
+            max-width: 800px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 48px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-image-caption {
+            padding: 14px 20px;
+            background: var(--bg-primary);
+            font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            font-style: italic;
+        }
+
+        /* Metrics Row */
+        .metrics-row {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 48px;
+            padding: 32px;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-item {
+            text-align: left;
+        }
+
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Tools Grid */
+        .tools-section {
+            margin-bottom: 48px;
+        }
+
+        .tools-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tool-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .tool-item:hover {
+            border-color: var(--accent-primary);
+            background: var(--accent-light);
+        }
+
+        .tool-item img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        /* Resources Grid */
+        .resources-section {
+            margin-bottom: 48px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .resource-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .resource-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .resource-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .resource-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-primary);
+        }
+
+        .resource-content h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .resource-content p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Media Coverage */
+        .media-banner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px 32px;
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border-radius: 12px;
+            margin-bottom: 48px;
+        }
+
+        .media-banner-icon {
+            font-size: 32px;
+        }
+
+        .media-banner-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .media-banner-content a {
+            color: var(--accent-primary);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .media-banner-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Secondary Image */
+        .secondary-image {
+            max-width: 800px;
+            margin: 48px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .secondary-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            padding: 16px 20px;
+            background: var(--bg-primary);
+            font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Website Links Grid */
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+
+        .website-card {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .website-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .website-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .website-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .website-card .link {
+            font-size: 14px;
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        /* Stats Highlights */
+        .stats-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            padding: 24px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-card .label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* About Section */
+        #about {
+            background: var(--bg-secondary);
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .about-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .about-avatar {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            border: 3px solid var(--border-color);
+        }
+
+        .about-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .about-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-primary);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .about-content h3 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* Chevening Highlight - Matching Chevening Blue */
+        .chevening-card {
+            margin: 32px 0;
+            padding: 28px;
+            background: #00205B;
+            border-radius: 16px;
+            color: white;
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .chevening-logo {
+            width: 140px;
+            height: 140px;
+            flex-shrink: 0;
+        }
+
+        .chevening-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .chevening-content h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .chevening-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.95;
+            margin-bottom: 14px;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .chevening-content a {
+            color: #93C5FD;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .chevening-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Education with Logos */
+        .education-list {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .education-list h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+        }
+
+        .education-item {
+            display: flex;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            align-items: flex-start;
+        }
+
+        .education-item:last-child { border-bottom: none; }
+
+        .education-logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            padding: 6px;
+            transition: all 0.2s;
+        }
+
+        .education-logo:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .education-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .education-details h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: var(--text-primary);
+        }
+
+        .education-details p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .education-year {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        /* Professional Journey - LinkedIn Style */
+        .journey-section {
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .journey-section h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+        }
+
+        .journey-item {
+            display: flex;
+            gap: 16px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .journey-item:last-child {
+            border-bottom: none;
+        }
+
+        .journey-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            padding: 8px;
+            transition: all 0.2s;
+        }
+
+        .journey-logo:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .journey-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .journey-content {
+            flex: 1;
+        }
+
+        .journey-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .journey-title h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .journey-title .company {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .journey-meta {
+            text-align: right;
+        }
+
+        .journey-meta .duration {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .journey-meta .location {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .journey-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 12px;
+        }
+
+        .journey-description ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .journey-description li {
+            margin-bottom: 6px;
+        }
+
+        /* Contact */
+        #contact {
+            background: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 100px 48px;
+        }
+
+        #contact .section-label {
+            color: rgba(255,255,255,0.6);
+        }
+
+        #contact .section-title {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .contact-subtitle {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            max-width: 480px;
+            margin: 0 auto 40px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: white;
+            color: var(--bg-dark);
+        }
+
+        .contact-link svg { width: 18px; height: 18px; }
+
+        /* Footer */
+        footer {
+            padding: 24px 48px;
+            background: var(--bg-dark);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav { padding: 0 24px; }
+            section, .project-section { padding: 80px 24px; }
+            .about-container { grid-template-columns: 1fr; gap: 40px; }
+            .about-sidebar { position: static; max-width: 240px; margin: 0 auto; }
+            .metrics-row { flex-wrap: wrap; gap: 32px; }
+            .chevening-card { flex-direction: column; text-align: center; }
+            .chevening-logo { width: 120px; height: 120px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding: 120px 24px 80px; }
+            .hero h1 { font-size: 32px; }
+            .hero-ctas { flex-direction: column; width: 100%; max-width: 280px; }
+            .btn-primary, .btn-secondary { justify-content: center; width: 100%; }
+            .metrics-row { padding: 24px; gap: 24px; }
+            .metric-value { font-size: 24px; }
+            .media-banner { flex-direction: column; text-align: center; }
+            .contact-links { flex-direction: column; align-items: center; }
+            .resources-grid { grid-template-columns: 1fr; }
+            .websites-grid { grid-template-columns: 1fr; }
+            .journey-header { flex-direction: column; gap: 8px; }
+            .journey-meta { text-align: left; }
+            .education-header { flex-direction: column; gap: 4px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Aashutosh Saini</div>
+        <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="mailto:aashutosh.saini@gmail.com" class="nav-cta">Get in Touch</a>
+        <button class="mobile-menu-btn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Available for opportunities
+        </div>
+        <h1>Building <span class="highlight">AI products</span> that reach millions</h1>
+        <p class="hero-subtitle">
+            Product Manager specializing in LLM-powered solutions, voice AI, and enterprise platforms. 
+            From government-scale deployments to startup innovation.
+        </p>
+        <div class="hero-ctas">
+            <a href="#work" class="btn-primary">View my work</a>
+            <a href="https://www.linkedin.com/in/aashutoshsaini" target="_blank" class="btn-secondary">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Project 1: AI Chatbot for Farmers -->
+    <section class="project-section" id="work">
+        <div class="project-container">
+            <div class="project-header reveal">
+                <span class="project-number">01</span>
+                <span class="project-category">Voice AI / Gov Tech / LLM</span>
+            </div>
+            
+            <h2 class="project-title reveal">AI Chatbot for Farmers</h2>
+            <p class="project-description reveal">
+                Built and scaled a voice-enabled AI assistant with LLM integration for Indian state governments. 
+                Led a cross-functional team of 15 members to develop a multi-channel outreach system (voice, chat) 
+                that transformed how farmers access agricultural information and government services.
+            </p>
+
+            <div class="project-image reveal">
+                <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/CM launch event.jpg" alt="CM Launch Event - AI Chatbot for Farmers">
+                <div class="project-image-caption">CM Launch event of AI chatbot in Odisha</div>
+            </div>
+
+            <div class="metrics-row reveal">
+                <div class="metric-item">
+                    <div class="metric-value">10M+</div>
+                    <div class="metric-label">Beneficiaries Impacted</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Reduced Resolution Time</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Indian States Deployed</div>
+                </div>
+            </div>
+
+            <!-- Media Coverage -->
+            <div class="media-banner reveal">
+                <span class="media-banner-icon">🏆</span>
+                <div class="media-banner-content">
+                    <h4>Featured in The Hindu & Appreciated by Bill Gates</h4>
+                    <a href="https://www.thehindu.com/education/ahead-of-india-visit-bill-gates-lauds-odisha-farmers-for-using-ai-heres-their-story/article69348980.ece" target="_blank">Read the full story →</a>
+                </div>
+            </div>
+
+            <!-- Tools Used -->
+            <div class="tools-section reveal">
+                <div class="tools-label">Tools & Technologies</div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                        GitHub
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg" alt="GA4">
+                        Google Analytics 4
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoft.svg" alt="Clarity">
+                        Microsoft Clarity
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/apache.svg" alt="Superset">
+                        Apache Superset
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">
+                        SQL
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                        Figma
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="resources-section reveal">
+                <div class="tools-label">Resources & Artifacts</div>
+                <div class="resources-grid">
+                    <a href="https://drive.google.com/file/d/1CZkgMsNxyuHMebiMN5adBsUA9ZazqLqm/view?usp=drive_link" target="_blank" class="resource-card">
+                        <div class="resource-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+                            </svg>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Tech Architecture Snapshot</h4>
+                            <p>System design documentation</p>
+                        </div>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1RxuoWAzuBnilvUcFb7VidT12yFVguoaV/view?usp=drive_link" target="_blank" class="resource-card">
+                        <div class="resource-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="resource-content">
+                            <h4>PRD for Feature Launch</h4>
+                            <p>Product requirements document</p>
+                        </div>
+                    </a>
+                    <a href="https://www.figma.com/design/RP98ulbEYLK3Q6PMKiFWmG/Aashutosh-Saini-s-team-library?node-id=0-1&t=aMWHLsClWduNtuC4-1" target="_blank" class="resource-card">
+                        <div class="resource-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                            </svg>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Figma Screen Designs</h4>
+                            <p>UI/UX design files</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: DVNC.AI -->
+    <section class="project-section">
+        <div class="project-container">
+            <div class="project-header reveal">
+                <span class="project-number">02</span>
+                <span class="project-category">AI / LLM / Multi-Agent Systems</span>
+            </div>
+            
+            <h2 class="project-title reveal">DVNC.AI Platform</h2>
+            <p class="project-description reveal">
+                Product Manager handling end-to-end ideation and overseeing development of an AI-powered knowledge 
+                assistant. Building a solution to address the problem of convergence in AI bots — enabling more 
+                nuanced, multi-perspective responses through specialized agents.
+            </p>
+
+            <div class="project-image reveal">
+                <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/DVNC AI.jpg" alt="DVNC.AI Platform">
+            </div>
+
+            <div class="metrics-row reveal">
+                <div class="metric-item">
+                    <div class="metric-value">30+</div>
+                    <div class="metric-label">C-Level Stakeholder Pitches</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">Multi-Agent</div>
+                    <div class="metric-label">LLM Architecture</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-value">End-to-End</div>
+                    <div class="metric-label">Product Ownership</div>
+                </div>
+            </div>
+
+            <!-- Royal Institution Demo -->
+            <div class="secondary-image reveal">
+                <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Demo at Royal Institue London.png" alt="Demo at Royal Institution London">
+                <div class="image-caption">
+                    Prototype demonstration at the Royal Institution, London — 27th September 2025
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="resources-section reveal">
+                <div class="tools-label">Links</div>
+                <div class="resources-grid">
+                    <a href="https://www.dvnc.ai" target="_blank" class="resource-card">
+                        <div class="resource-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <div class="resource-content">
+                            <h4>DVNC.AI Website</h4>
+                            <p>Learn more about the product (proprietary)</p>
+                        </div>
+                    </a>
+                    <a href="https://final-dvnc1.vercel.app/" target="_blank" class="resource-card">
+                        <div class="resource-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="resource-content">
+                            <h4>Interactive Prototype</h4>
+                            <p>Multi-agent platform demo (built by me)</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 3: DaVinci Network -->
+    <section class="project-section">
+        <div class="project-container">
+            <div class="project-header reveal">
+                <span class="project-number">03</span>
+                <span class="project-category">Web Development / Content Strategy / Growth</span>
+            </div>
+            
+            <h2 class="project-title reveal">The DaVinci Network</h2>
+            <p class="project-description reveal">
+                Leading AI-driven content strategy, social media campaigns, and website development for a 
+                multi-agent generative AI platform. Managing end-to-end digital presence across multiple channels.
+            </p>
+
+            <div class="stats-highlight reveal">
+                <div class="stat-card">
+                    <div class="value">150%</div>
+                    <div class="label">Organic Traffic Increase</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">40%</div>
+                    <div class="label">Website Traffic Growth</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">5+</div>
+                    <div class="label">AI Videos Monthly</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">4+</div>
+                    <div class="label">SEO Blogs Monthly</div>
+                </div>
+            </div>
+
+            <p class="project-description reveal" style="margin-top: 32px;">
+                Managing social media campaigns across YouTube, X, and LinkedIn, producing AI-generated content 
+                including 5+ videos and 20+ visuals monthly. Built and optimized multiple websites using low-code 
+                AI tools with SEO best practices.
+            </p>
+
+            <div class="websites-grid reveal">
+                <a href="https://www.davinci-network.com/" target="_blank" class="website-card">
+                    <h4>DaVinci Network Main Website</h4>
+                    <p>Company homepage rebuilt with AI tools and SEO optimization</p>
+                    <span class="link">davinci-network.com →</span>
+                </a>
+                <a href="https://www.davinci-network.com/the-festival-2025" target="_blank" class="website-card">
+                    <h4>Polymath Festival 2025</h4>
+                    <p>Event landing page for flagship festival</p>
+                    <span class="link">View website →</span>
+                </a>
+                <a href="https://www.davinci-network.com/polymath-academy" target="_blank" class="website-card">
+                    <h4>Polymath Academy</h4>
+                    <p>Educational platform webpage</p>
+                    <span class="link">View website →</span>
+                </a>
+            </div>
+
+            <div class="tools-section reveal" style="margin-top: 48px;">
+                <div class="tools-label">Built With</div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wix.svg" alt="Wix">
+                        Wix
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/anthropic.svg" alt="Claude">
+                        Claude Code
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                        Figma
+                    </div>
+                    <div class="tool-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/canva.svg" alt="Canva">
+                        Canva
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header reveal">
+            <div class="section-label">Background</div>
+            <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-container">
+            <div class="about-sidebar reveal">
+                <div class="about-avatar">
+                    <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Ash chev image.jpg" alt="Aashutosh Saini">
+                </div>
+                <div class="about-badges">
+                    <div class="about-badge">
+                        <span>🏆</span> Chevening Scholar
+                    </div>
+                    <div class="about-badge">
+                        <span>🎓</span> LSE & IIM Ahmedabad
+                    </div>
+                    <div class="about-badge">
+                        <span>🌍</span> Open to Relocate
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content reveal">
+                <h3>Growth-focused PM building AI at population scale</h3>
+                <p>
+                    I'm a Product Manager with 5+ years of experience building AI-powered SaaS products 
+                    that have impacted millions of users. I specialize in LLM-based agents, voice AI, 
+                    and 0-to-1 product development.
+                </p>
+                <p>
+                    Currently at The DaVinci Network in London, building AI-powered knowledge assistants. 
+                    Previously led digital transformation at Samagra Governance, creating voice AI 
+                    solutions for state governments in India.
+                </p>
+
+                <!-- Chevening Highlight - Chevening Blue -->
+                <div class="chevening-card">
+                    <div class="chevening-logo">
+                        <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Chevening-Scholarship-2026-675x675.png" alt="Chevening">
+                    </div>
+                    <div class="chevening-content">
+                        <h4>Chevening Scholarship</h4>
+                        <p>
+                            Full scholarship to study MSc in Management, Information Systems and Digital Innovation 
+                            at London School of Economics. Selected among the top 2-3% of applicants from 160+ countries.
+                        </p>
+                        <a href="https://www.chevening.org/" target="_blank">Learn about Chevening →</a>
+                    </div>
+                </div>
+
+                <!-- Education with Logos and LinkedIn Links -->
+                <div class="education-list">
+                    <h4>Education</h4>
+                    
+                    <div class="education-item">
+                        <a href="https://www.linkedin.com/school/london-school-of-economics/posts/?feedView=all" target="_blank" class="education-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/LSE_Logo.svg.png" alt="LSE">
+                        </a>
+                        <div class="education-content">
+                            <div class="education-header">
+                                <div class="education-details">
+                                    <h5>London School of Economics</h5>
+                                    <p>MSc Management, Information Systems & Digital Innovation • Distinction</p>
+                                </div>
+                                <span class="education-year">2024 – 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <a href="https://www.linkedin.com/school/iimahmedabad/posts/?feedView=all" target="_blank" class="education-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/IIM_Ahmedabad_Logo.svg_.png" alt="IIM Ahmedabad">
+                        </a>
+                        <div class="education-content">
+                            <div class="education-header">
+                                <div class="education-details">
+                                    <h5>IIM Ahmedabad</h5>
+                                    <p>MBA • India's #1 Business School</p>
+                                </div>
+                                <span class="education-year">2017 – 2019</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <a href="https://www.linkedin.com/school/shri-ram-college-of-commerce/posts/?feedView=all" target="_blank" class="education-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/The_Official_Logo_of_Shri_Ram_College_of_Commerce(SRCC).png" alt="SRCC">
+                        </a>
+                        <div class="education-content">
+                            <div class="education-header">
+                                <div class="education-details">
+                                    <h5>SRCC, Delhi University</h5>
+                                    <p>Bachelor of Economics</p>
+                                </div>
+                                <span class="education-year">2014 – 2017</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Journey with LinkedIn Links -->
+                <div class="journey-section">
+                    <h4>Professional Journey</h4>
+                    
+                    <div class="journey-item">
+                        <a href="https://www.linkedin.com/company/the-davinci-network" target="_blank" class="journey-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/dvn-logo%20(1).png" alt="DaVinci Network">
+                        </a>
+                        <div class="journey-content">
+                            <div class="journey-header">
+                                <div class="journey-title">
+                                    <h5>Product Manager (Part Time)</h5>
+                                    <span class="company">The DaVinci Network</span>
+                                </div>
+                                <div class="journey-meta">
+                                    <div class="duration">Apr 2025 – Present</div>
+                                    <div class="location">London, UK</div>
+                                </div>
+                            </div>
+                            <div class="journey-description">
+                                <ul>
+                                    <li>Building an AI-powered knowledge assistant with multi-agent LLM framework for enterprise knowledge management</li>
+                                    <li>Leading end-to-end product & GTM, demoed at Royal Institution, London</li>
+                                    <li>Pitched platform prototype to 30+ C-level stakeholders, securing partnerships & validating product-market fit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journey-item">
+                        <a href="https://www.linkedin.com/company/samagra-transforming-governance/posts/?feedView=all" target="_blank" class="journey-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Samagra%20new%20logo_favicon.png" alt="Samagra">
+                        </a>
+                        <div class="journey-content">
+                            <div class="journey-header">
+                                <div class="journey-title">
+                                    <h5>Product Manager, Government Digital Transformation</h5>
+                                    <span class="company">Samagra Governance</span>
+                                </div>
+                                <div class="journey-meta">
+                                    <div class="duration">Dec 2022 – Aug 2024</div>
+                                    <div class="location">India</div>
+                                </div>
+                            </div>
+                            <div class="journey-description">
+                                <ul>
+                                    <li>Led agile development of multi-channel outreach system (voice, chat), leading a cross-functional 15-member team</li>
+                                    <li>Built enterprise-grade voice AI assistant with LLM integration, achieved 90% reduction in query resolution time</li>
+                                    <li>Scaled AI deployment across 3 states, benefiting 10M+ users; demoed to Bill Gates & Ministry of Agriculture</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journey-item">
+                        <a href="https://www.linkedin.com/company/havells-india-ltd/" target="_blank" class="journey-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Havells_Logo.svg.png" alt="Havells">
+                        </a>
+                        <div class="journey-content">
+                            <div class="journey-header">
+                                <div class="journey-title">
+                                    <h5>Growth Product Manager</h5>
+                                    <span class="company">Havells India</span>
+                                </div>
+                                <div class="journey-meta">
+                                    <div class="duration">Mar 2021 – Dec 2022</div>
+                                    <div class="location">India</div>
+                                </div>
+                            </div>
+                            <div class="journey-description">
+                                <ul>
+                                    <li>Headed GTM for smart (IoT) & portable lighting categories pan India; created ₹40 crore additional revenue stream</li>
+                                    <li>Launched 10+ products, oversaw product lifecycle (0-1) while collaborating with engineering and design teams</li>
+                                    <li>Scaled e-commerce channel via content marketing & conversion optimization; achieved 200% growth in online sales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="journey-item">
+                        <a href="https://www.linkedin.com/company/samsung-electronics/posts/?feedView=all" target="_blank" class="journey-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Samsung%20Logo.png" alt="Samsung">
+                        </a>
+                        <div class="journey-content">
+                            <div class="journey-header">
+                                <div class="journey-title">
+                                    <h5>Area Sales Manager</h5>
+                                    <span class="company">Samsung Electronics</span>
+                                </div>
+                                <div class="journey-meta">
+                                    <div class="duration">May 2019 – Feb 2021</div>
+                                    <div class="location">India</div>
+                                </div>
+                            </div>
+                            <div class="journey-description">
+                                <ul>
+                                    <li>Led B2B sales for a monthly business of INR 80 million across 1000+ retailers</li>
+                                    <li>Managed a team of 10+ salesmen & 50+ promoters; surpassed targets for 6 consecutive months</li>
+                                    <li>Earned the Star ABM award; improved retailer billing by 25% through distribution enablers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-label reveal">Get in Touch</div>
+        <h2 class="section-title reveal">Let's work together</h2>
+        <p class="contact-subtitle reveal">
+            Open to PM roles in AI/ML, Growth, and Consumer products. 
+            Immediate joiner, open to relocation.
+        </p>
+        <div class="contact-links reveal">
+            <a href="mailto:aashutosh.saini@gmail.com" class="contact-link">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/aashutoshsaini" target="_blank" class="contact-link">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-text">© 2025 Aashutosh Saini</div>
+    </footer>
+
+    <script>
+        function reveal() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
