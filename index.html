@@ -693,6 +693,183 @@
             text-decoration: underline;
         }
 
+        /* Technical Skills Section */
+        .technical-skills-section {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .technical-skills-section h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-primary);
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .skill-item img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .skill-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent-primary);
+        }
+
+        /* AI Research Section */
+        .research-section {
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .research-section h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+        }
+
+        .research-card {
+            padding: 28px;
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #C7D2FE;
+        }
+
+        .research-card h5 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .research-card h5 .badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            background: var(--accent-green);
+            color: white;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .research-card .institution {
+            font-size: 14px;
+            color: var(--accent-primary);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .research-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .research-card ul {
+            margin: 0 0 16px 0;
+            padding-left: 20px;
+        }
+
+        .research-card li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .research-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--accent-primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .research-cta:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .research-cta svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .working-paper-card {
+            padding: 24px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+
+        .working-paper-card h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .working-paper-card .status {
+            font-size: 12px;
+            font-weight: 500;
+            color: #D97706;
+            margin-bottom: 10px;
+        }
+
+        .working-paper-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
         .education-list {
             margin-top: 40px;
             padding-top: 32px;
@@ -974,6 +1151,7 @@
             .journey-header { flex-direction: column; gap: 8px; }
             .journey-meta { text-align: left; }
             .education-header { flex-direction: column; gap: 4px; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         .reveal {
@@ -1010,9 +1188,9 @@
             Available for opportunities
         </div>
         <h1 class="hero-name">Aashutosh Saini</h1>
-        <p class="hero-title">AI Product Manager</p>
+        <p class="hero-title">Technology Enthusiast | Voice AI & Enterprise Solutions</p>
         <p class="hero-tagline">
-            Building LLM-powered products that have impacted 10M+ users across government and enterprise.
+            5+ years deploying AI solutions at enterprise scale. Built LLM-powered voice assistants serving 10M+ farmers across 3 Indian states.
         </p>
         <div class="hero-ctas">
             <a href="#work" class="btn-primary">View My Work</a>
@@ -1032,11 +1210,11 @@
                 <span class="project-category">Voice AI / Gov Tech / LLM</span>
             </div>
             
-            <h2 class="project-title reveal">AI Chatbot for Farmers</h2>
+            <h2 class="project-title reveal">India's First Voice-Enabled AI Assistant for Farmers</h2>
             <p class="project-description reveal">
-                Built and scaled a voice-enabled AI assistant with LLM integration for Indian state governments. 
-                Led a cross-functional team of 15 members to develop a multi-channel outreach system (voice, chat) 
-                that transformed how farmers access agricultural information and government services.
+                Ideated and deployed AI voice solutions for Indian state governments, serving population-scale digital transformation initiatives. 
+                Led a cross-functional team of 15 members (engineers, designers, field specialists) using Agile methodologies 
+                to build a multi-channel outreach system that transformed how farmers access agricultural information.
             </p>
 
             <div class="project-image reveal">
@@ -1047,7 +1225,7 @@
             <div class="metrics-row reveal">
                 <div class="metric-item">
                     <div class="metric-value">10M+</div>
-                    <div class="metric-label">Beneficiaries Impacted</div>
+                    <div class="metric-label">Farmers Benefited</div>
                 </div>
                 <div class="metric-item">
                     <div class="metric-value">90%</div>
@@ -1057,6 +1235,10 @@
                     <div class="metric-value">3</div>
                     <div class="metric-label">Indian States Deployed</div>
                 </div>
+                <div class="metric-item">
+                    <div class="metric-value">70%</div>
+                    <div class="metric-label">Accessibility Improvement</div>
+                </div>
             </div>
 
             <div class="media-banner reveal">
@@ -1064,6 +1246,15 @@
                 <div class="media-banner-content">
                     <h4>Featured in The Hindu & Appreciated by Bill Gates</h4>
                     <a href="https://www.thehindu.com/education/ahead-of-india-visit-bill-gates-lauds-odisha-farmers-for-using-ai-heres-their-story/article69348980.ece" target="_blank">Read the full story →</a>
+                </div>
+            </div>
+
+            <div class="resources-section reveal">
+                <div class="tools-label">Key Achievements</div>
+                <div style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 32px;">
+                    <p style="margin-bottom: 12px;">• <strong>Led user research</strong> in rural areas to identify adoption barriers; shipped PWA version improving accessibility by 70%</p>
+                    <p style="margin-bottom: 12px;">• <strong>Facilitated AI adoption workshops</strong> with 50+ stakeholders (executives to field workers), driving change management</p>
+                    <p style="margin-bottom: 12px;">• <strong>Digitised State Cooperative Bank's</strong> finance workflows via open APIs, reducing loan processing time by 65%</p>
                 </div>
             </div>
 
@@ -1147,8 +1338,8 @@
             
             <h2 class="project-title reveal">DVNC.AI Platform</h2>
             <p class="project-description reveal">
-                Product Manager handling end-to-end ideation and overseeing development of an AI-powered knowledge 
-                assistant. Building a solution to address the problem of convergence in AI bots — enabling more 
+                Deploying multi-agent AI inspired by Da Vinci's polymath intelligence; leading customer discovery & product design.
+                Building a solution to address the problem of convergence in AI bots — enabling more 
                 nuanced, multi-perspective responses through specialized agents.
             </p>
 
@@ -1159,22 +1350,31 @@
             <div class="metrics-row reveal">
                 <div class="metric-item">
                     <div class="metric-value">30+</div>
-                    <div class="metric-label">C-Level Stakeholder Pitches</div>
+                    <div class="metric-label">C-Level Executive Pitches</div>
                 </div>
                 <div class="metric-item">
-                    <div class="metric-value">Multi-Agent</div>
-                    <div class="metric-label">LLM Architecture</div>
+                    <div class="metric-value">15+</div>
+                    <div class="metric-label">Customer Discovery Sessions</div>
                 </div>
                 <div class="metric-item">
                     <div class="metric-value">End-to-End</div>
-                    <div class="metric-label">Product Ownership</div>
+                    <div class="metric-label">GTM Ownership</div>
                 </div>
             </div>
 
             <div class="secondary-image reveal">
                 <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Demo at Royal Institue London.png" alt="Demo at Royal Institution London">
                 <div class="image-caption">
-                    Prototype demonstration at the Royal Institution, London — 27th September 2025
+                    Technical prototype demonstration at the Royal Institution, London — 27th September 2025
+                </div>
+            </div>
+
+            <div class="resources-section reveal">
+                <div class="tools-label">Key Contributions</div>
+                <div style="color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 32px;">
+                    <p style="margin-bottom: 12px;">• <strong>Built and delivered technical prototype</strong> of AI platform to 30+ C-level executives at Royal Institution, London</p>
+                    <p style="margin-bottom: 12px;">• <strong>Led 15+ customer discovery sessions</strong> to identify pain points, inspire solution features & validate product-market fit</p>
+                    <p style="margin-bottom: 12px;">• <strong>Owned end-to-end GTM execution</strong>: built product website, collected LLM training datasets & created demo videos</p>
                 </div>
             </div>
 
@@ -1314,11 +1514,11 @@
             </div>
 
             <div class="about-content reveal">
-                <h3>Growth-focused PM building AI at population scale</h3>
+                <h3>Technology enthusiast deploying AI at enterprise scale</h3>
                 <p>
-                    I'm a Product Manager with 5+ years of experience building AI-powered SaaS products 
-                    that have impacted millions of users. I specialize in LLM-based agents, voice AI, 
-                    and 0-to-1 product development.
+                    I'm a technology enthusiast with 5+ years of experience deploying AI solutions at enterprise scale, 
+                    specialising in voice AI and customer-facing technical delivery. I've built LLM-powered voice 
+                    assistants serving 10M+ farmers across 3 Indian states.
                 </p>
                 <p>
                     Currently at The DaVinci Network in London, building AI-powered knowledge assistants. 
@@ -1331,9 +1531,12 @@
                         <img src="https://cdn.jsdelivr.net/gh/Aashutosh2906/image-hosting@main/public/images/Chevening-Scholarship-2026-675x675.png" alt="Chevening">
                     </div>
                     <div class="chevening-content">
-                        <h4>Chevening Scholar</h4>
+                        <h4>Adani AI Chevening Scholar</h4>
                         <p>
-                            Full Scholarship to study MSc in Management, Information Systems and Digital Innovation at London School of Economics and Political Science. Chevening is UK Government's flagship global leadership award for exceptional professionals with proven track records and future leadership potential. Selected among the top 2-3% of applicants from 160+ countries.
+                            UK Government award for leadership, networking & career vision for a funded master's. 
+                            Full Scholarship to study MSc in Management, Information Systems and Digital Innovation 
+                            at London School of Economics and Political Science. Selected among the top 2-3% of 
+                            applicants from 160+ countries.
                         </p>
                         <a href="https://www.chevening.org/" target="_blank">Learn about Chevening →</a>
                     </div>
@@ -1350,7 +1553,7 @@
                             <div class="education-header">
                                 <div class="education-details">
                                     <h5>The London School of Economics and Political Science (LSE)</h5>
-                                    <p>Master of Science - MS, Management of Information Systems and Digital Innovation</p>
+                                    <p>MSc in Management, Information Systems and Digital Innovation</p>
                                     <p style="color: #10b981; font-weight: 500; margin-top: 4px;">Grade: Distinction</p>
                                 </div>
                                 <span class="education-year">Sep 2024 – Sep 2025</span>
@@ -1366,9 +1569,10 @@
                             <div class="education-header">
                                 <div class="education-details">
                                     <h5>Indian Institute of Management Ahmedabad</h5>
-                                    <p>Master of Business Administration - MBA, Business Administration and Management, General</p>
+                                    <p>Master of Business Administration (MBA)</p>
+                                    <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">India's #1 ranked business school with &lt;1% acceptance rate</p>
                                 </div>
-                                <span class="education-year">2017 – 2019</span>
+                                <span class="education-year">Jun 2017 – Apr 2019</span>
                             </div>
                         </div>
                     </div>
@@ -1381,9 +1585,9 @@
                             <div class="education-header">
                                 <div class="education-details">
                                     <h5>Shri Ram College of Commerce (SRCC)</h5>
-                                    <p>Bachelor of Arts, Economics</p>
+                                    <p>Bachelor of Economics (Honours)</p>
                                 </div>
-                                <span class="education-year">2014 – 2017</span>
+                                <span class="education-year">Jul 2014 – May 2017</span>
                             </div>
                         </div>
                     </div>
@@ -1408,11 +1612,7 @@
                                 </div>
                             </div>
                             <div class="journey-description">
-                                <ul>
-                                    <li>Building an AI-powered knowledge assistant with multi-agent LLM framework for enterprise knowledge management</li>
-                                    <li>Leading end-to-end product & GTM, demoed at Royal Institution, London</li>
-                                    <li>Pitched platform prototype to 30+ C-level stakeholders, securing partnerships & validating product-market fit</li>
-                                </ul>
+                                <p>Leading customer discovery and product design for multi-agent AI platform. Delivered technical prototype to 30+ C-level executives at Royal Institution, London. Owned end-to-end GTM execution including website, LLM training datasets & demo videos.</p>
                             </div>
                         </div>
                     </div>
@@ -1424,7 +1624,7 @@
                         <div class="journey-content">
                             <div class="journey-header">
                                 <div class="journey-title">
-                                    <h5>Product Manager, Government Digital Transformation</h5>
+                                    <h5>Technical Solutions Consultant</h5>
                                     <span class="company">Samagra Governance</span>
                                 </div>
                                 <div class="journey-meta">
@@ -1433,11 +1633,7 @@
                                 </div>
                             </div>
                             <div class="journey-description">
-                                <ul>
-                                    <li>Led agile development of multi-channel outreach system (voice, chat), leading a cross-functional 15-member team</li>
-                                    <li>Built enterprise-grade voice AI assistant with LLM integration, achieved 90% reduction in query resolution time</li>
-                                    <li>Scaled AI deployment across 3 states, benefiting 10M+ users; demoed to Bill Gates & Ministry of Agriculture</li>
-                                </ul>
+                                <p>Ideated India's first voice-enabled AI assistant for farmers, achieving 90% reduction in query resolution time. Scaled deployment across 3 states, benefiting 10M+ farmers. Led 15-member cross-functional team and facilitated AI adoption workshops with 50+ stakeholders.</p>
                             </div>
                         </div>
                     </div>
@@ -1458,11 +1654,7 @@
                                 </div>
                             </div>
                             <div class="journey-description">
-                                <ul>
-                                    <li>Headed GTM for smart (IoT) & portable lighting categories pan India; created ₹40 crore additional revenue stream</li>
-                                    <li>Launched 10+ products, oversaw product lifecycle (0-1) while collaborating with engineering and design teams</li>
-                                    <li>Scaled e-commerce channel via content marketing & conversion optimization; achieved 200% growth in online sales</li>
-                                </ul>
+                                <p>Launched 10+ products end-to-end while driving 200% e-commerce growth through data-driven optimisation. CEO's office project: established industry's first exclusive rural network generating $1.2M monthly sales.</p>
                             </div>
                         </div>
                     </div>
@@ -1474,7 +1666,7 @@
                         <div class="journey-content">
                             <div class="journey-header">
                                 <div class="journey-title">
-                                    <h5>Area Sales Manager</h5>
+                                    <h5>Enterprise Solutions Manager</h5>
                                     <span class="company">Samsung Electronics</span>
                                 </div>
                                 <div class="journey-meta">
@@ -1483,12 +1675,112 @@
                                 </div>
                             </div>
                             <div class="journey-description">
-                                <ul>
-                                    <li>Led B2B sales for a monthly business of INR 80 million across 1000+ retailers</li>
-                                    <li>Managed a team of 10+ salesmen & 50+ promoters; surpassed targets for 6 consecutive months</li>
-                                    <li>Earned the Star ABM award; improved retailer billing by 25% through distribution enablers</li>
-                                </ul>
+                                <p>Managed $1M monthly B2B operations across 100+ enterprise partners. Built performance tracking systems for 60+ team members and executed 3 flagship product launches with 2x pre-booking traffic.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Research Section -->
+                <div class="research-section">
+                    <h4>AI Research</h4>
+                    
+                    <div class="research-card">
+                        <h5>
+                            MSc Dissertation
+                            <span class="badge">Distinction</span>
+                        </h5>
+                        <div class="institution">London School of Economics and Political Science</div>
+                        <p>
+                            <strong>"Effectiveness of AI Chatbots in Promoting Digital Inclusion Among Marginalised Communities"</strong>
+                        </p>
+                        <p>
+                            Investigated voice-enabled AI chatbots serving 10M+ farmers across rural India, focusing on how voice interfaces drive adoption in low-literacy populations.
+                        </p>
+                        <ul>
+                            <li><strong>Voice AI as accessibility enabler:</strong> Found that 60%+ of user interactions occurred via speech-to-text, proving voice interfaces critical for bridging digital literacy gaps at scale</li>
+                            <li><strong>Hybrid human-AI ecosystems:</strong> Discovered that meaningful voice AI adoption requires trusted intermediaries — technology alone isn't sufficient for behavior change</li>
+                            <li><strong>Accuracy-trust paradox:</strong> Identified how institutional risk aversion leads to overly cautious AI design, reducing practical utility despite high user expectations</li>
+                        </ul>
+                        <a href="mailto:aashutosh.saini@gmail.com?subject=Request for Dissertation Copy&body=Hi Aashutosh,%0D%0A%0D%0AI would like to request a copy of your MSc dissertation on voice AI chatbots and digital inclusion.%0D%0A%0D%0AThank you!" class="research-cta">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Request a Copy
+                        </a>
+                    </div>
+
+                    <div class="working-paper-card">
+                        <h5>Working Paper on Digital Agriculture in India</h5>
+                        <div class="status">📝 In Progress — Co-authoring with LSE Professor</div>
+                        <p>
+                            Building on dissertation research to explore scalable models for voice AI-driven agricultural 
+                            advisory services and their implications for rural digital transformation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills Section -->
+                <div class="technical-skills-section">
+                    <h4>Technical Skills</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            Python
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">
+                            SQL
+                        </div>
+                        <div class="skill-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            REST APIs
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postman.svg" alt="Postman">
+                            Postman
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira">
+                            Jira
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            GitHub
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence">
+                            Confluence
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                            Figma
+                        </div>
+                        <div class="skill-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                            Google Analytics
+                        </div>
+                        <div class="skill-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            Power BI
+                        </div>
+                        <div class="skill-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                            Excel
+                        </div>
+                        <div class="skill-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            A/B Testing
                         </div>
                     </div>
                 </div>
